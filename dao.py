@@ -171,3 +171,24 @@ def obter_time(time_id):
         [time_id],
         one=True
     )
+
+
+def remover_memrbo(membro_id):
+    return g.execute_db(
+        'DELETE FROM membros WHERE id = ?',
+        [membro_id]
+    )
+
+
+def remover_partida(partida_id):
+    return g.execute_db(
+        'DELETE FROM partidas WHERE id = ?',
+        [partida_id]
+    )
+
+
+def remover_time(time_id):
+    return g.execute_db(
+        'DELETE FROM times WHERE id = ?',
+        [time_id]
+    )
