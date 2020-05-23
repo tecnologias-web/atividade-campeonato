@@ -1,6 +1,6 @@
 import os
 from flask import Flask, g
-from db import get_db, query_db
+from db import execute_db, get_db, query_db
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,6 +13,7 @@ app = Flask(__name__)
 def before_request():
     g.db = get_db()
     g.query_db = query_db
+    g.execute_db = execute_db
 
 
 @app.teardown_request
